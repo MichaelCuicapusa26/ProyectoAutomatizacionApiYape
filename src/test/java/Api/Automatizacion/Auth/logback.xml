@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Establecer el nivel de log a ERROR para reducir la cantidad de logs -->
+    <logger name="com.intuit.karate" level="ERROR" />
+    <logger name="org.apache" level="ERROR" />
+
+    <!-- Configuración del appender de consola -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger a nivel INFO o ERROR para limitar el log general -->
+    <root level="ERROR">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
